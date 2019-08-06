@@ -1,0 +1,16 @@
+CAPI=2:
+name: uwcse:buckfast:noc_helpers:0.1
+description: Helper files for sending memory requests over the NoC
+
+filesets:
+    rtl:
+        files:
+            - rd_mem_noc_module.sv
+            - wr_mem_noc_module.sv
+        depend:
+            - uwcse:buckfast:includes
+            - uwcse:buckfast:openpiton_buckfast_noc
+        file_type: systemVerilogSource
+targets:
+    default:
+        filesets: [rtl]

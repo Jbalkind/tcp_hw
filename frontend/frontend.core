@@ -1,0 +1,49 @@
+CAPI=2:
+name: uwcse:buckfast:frontend:0.1
+description: Buckfast frontend files
+
+filesets:
+    rtl:
+        files:
+            - include/ip_hdr_assembler_pkg.sv
+            - include/ip_stream_format_pkg.sv
+            - eth_frame_format.sv
+            - eth_hdrtostream.sv
+            - eth_hdr_assembler.sv
+            - ip_stream_format.sv
+            - ip_stream_format_pipe.sv
+            - ip_stream_format_pipe_in.sv
+            - ip_stream_format_pipe_out.sv
+            - ip_header_assembler.sv
+            - ip_hdr_assembler_pipe.sv
+            - ip_hdr_assembler_pipe_in.sv
+            - ip_hdr_assembler_pipe_out.sv
+            - ip_to_mac.sv
+            - ip_to_ethstream.sv
+            - ip_rx_chksum_calc_wrap.sv
+            - udp_to_stream.sv
+            - udp_stream_format.sv
+            - udp_tx_chksum_input_ctrl.sv
+            - udp_tx_chksum_output_ctrl.sv
+            - udp_rx_chksum_input_ctrl.sv
+            - udp_rx_chksum_output_ctrl.sv
+            - chksum_calc.sv
+            - frontend_tx_chksum_engine.sv
+            - frontend_tx_payload_engine.sv
+            - tcp_tx_chksum_input_ctrl.sv
+            - tcp_tx_chksum_output_ctrl.sv
+            - rx_tcp_format_wrap.sv
+            - rx_tcp_format_input_ctrl.sv
+            - rx_tcp_format_output_ctrl.sv
+            - tcp_to_stream.sv
+
+        depend:
+            - uwcse:buckfast:includes
+            - uwcse:buckfast:fifo
+            - uwcse:beehive:circ_buf_helpers
+            - uwcse:beehive:data_converters
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

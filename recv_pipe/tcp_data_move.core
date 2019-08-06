@@ -1,0 +1,26 @@
+CAPI=2:
+name: uwcse:buckfast:tcp_data_move:0.1
+description: Buckfast TCP engine files for copying data around
+filesets:
+    rtl:
+        files:
+            - rx_payload_store_buf_cp.sv
+            - rx_payload_store_buf_cp_ctrl.sv
+            - rx_payload_store_buf_cp_datapath.sv
+            - tcp_tmp_rx_buf_ctrl.sv
+            - tcp_tmp_rx_buf_datapath.sv
+            - tcp_tmp_rx_buf_wrap.sv
+        depend:
+            - uwcse:buckfast:includes
+            - uwcse:buckfast:ram
+            - uwcse:buckfast:bsg_mem
+            - uwcse:buckfast:bsg_misc
+            - uwcse:buckfast:bsg_dataflow
+            - uwcse:buckfast:mem_alloc
+            - uwcse:beehive:tcp_inc
+            - uwcse:beehive:circ_buf_helpers
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

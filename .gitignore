@@ -1,0 +1,7 @@
+*.vpd.tcl
+*.vpd
+DVEfiles
+.nfs*
+csrc
+simv.daidir
+ucli.key

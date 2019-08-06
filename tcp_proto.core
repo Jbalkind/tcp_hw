@@ -1,0 +1,44 @@
+CAPI=2:
+name: uwcse:buckfast:tcp_engine_proto:0.1
+description: Buckfast TCP engine files for protocol implementation
+
+filesets:
+    rtl:
+        files:
+            - recv_pipe/ack_pending.sv
+            - recv_pipe/est_pipe.sv
+            - recv_pipe/est_pipe_input_merger.sv
+            - recv_pipe/flowid_manager.sv
+            - recv_pipe/fsm_est_arbiter.sv
+            - recv_pipe/rx_ack_engine.sv
+            - recv_pipe/rx_fsm_pipe.sv
+            - recv_pipe/rx_issue_pipe.sv
+            - recv_pipe/rx_payload_ptrs.sv
+            - recv_pipe/rx_pipe_wrap.sv
+            - recv_pipe/rx_state_store.sv
+            - recv_pipe/tcp_state_machine.sv
+            - recv_pipe/tcp_state_store.sv
+            - recv_pipe/tx_ack_engine.sv
+            - send_pipe/flowid_to_addr.sv
+            - send_pipe/hdr_assembler_pipe.sv
+            - send_pipe/payload_pointers.sv
+            - send_pipe/protocol_logic_pipe.sv
+            - send_pipe/rt_timeout_flag_store.sv
+            - send_pipe/scheduling_fifos.sv
+            - send_pipe/segment_calculator.sv
+            - send_pipe/send_merger.sv
+            - send_pipe/send_pipe_wrapper.sv
+            - send_pipe/tx_state_store.sv
+            - tcp_hdr_assembler.sv
+            - dummy_sched_req_fill.sv
+        depend:
+            - uwcse:buckfast:includes
+            - uwcse:buckfast:ram
+            - uwcse:buckfast:bsg_mem
+            - uwcse:buckfast:bsg_misc
+            - uwcse:buckfast:bsg_dataflow
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

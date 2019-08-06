@@ -1,0 +1,19 @@
+CAPI=2:
+name: uwcse:buckfast:mem_tile:0.1
+description: Buckfast files for interacting with DRAM/large memories
+
+filesets:
+    rtl:
+        files:
+            - dram_tile.sv
+            - dram/avalon_dram_controller.sv
+            - dram/avalon_dram_controller_ctrl.sv
+            - dram/avalon_dram_controller_datap.sv
+            - dram/avalon_dram_controller_wrap.sv
+        depend:
+            - uwcse:buckfast:includes
+            - uwcse:buckfast:openpiton_buckfast_noc
+        file_type: systemVerilogSource
+targets:
+    default:
+        filesets: [rtl]

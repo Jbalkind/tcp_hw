@@ -1,0 +1,25 @@
+######################################################
+#                   Includes                         #
+######################################################
+
++incdir+$PROJECT_ROOT/include/
+
+######################################################
+#                 Testing wrappers                   #
+######################################################
+$PROJECT_ROOT/testing/packet_queue/packet_queue_trace_tb.sv
+$PROJECT_ROOT/testing/packet_queue/test_rom.sv
+
+######################################################
+#                    DUT Files                       #
+######################################################
+$PROJECT_ROOT/common/packet_queue/packet_queue_controller.sv
+$PROJECT_ROOT/common/packet_queue/packet_queue.sv
+
+######################################################
+#               Basejump STL Modules                 #
+######################################################
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1r1w_sync.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1r1w_sync_synth.sv
+
+$BASEJUMP_STL_ROOT/bsg_test/bsg_trace_replay.v

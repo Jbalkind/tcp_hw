@@ -1,0 +1,29 @@
+######################################################
+#                   Includes                         #
+######################################################
++incdir+$PROJECT_ROOT/testing/slab_alloc/include
++incdir+$PROJECT_ROOT/include/
+
+######################################################
+#                 Testing wrappers                   #
+######################################################
+$PROJECT_ROOT/testing/slab_alloc/slab_alloc_trace_tb.sv
+$PROJECT_ROOT/testing/slab_alloc/test_rom.sv
+
+######################################################
+#                    DUT Files                       #
+######################################################
+$PROJECT_ROOT/common/mem_allocator/slab_alloc_tracker.sv
+$PROJECT_ROOT/common/ram/ram_2r1w_sync_backpressure.sv
+$PROJECT_ROOT/common/ram/ram_1r1w_sync_backpressure.sv
+$PROJECT_ROOT/common/fifo/fifo_1r1w.sv
+
+######################################################
+#               Basejump STL Modules                 #
+######################################################
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_2r1w_sync.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_2r1w_sync_synth.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1r1w_sync.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1r1w_sync_synth.sv
+
+$BASEJUMP_STL_ROOT/bsg_test/bsg_trace_replay.sv

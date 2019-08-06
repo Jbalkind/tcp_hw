@@ -1,0 +1,15 @@
+CAPI=2:
+name: uwcse:buckfast:tcp_engine:0.1
+description: Buckfast TCP engine files
+
+filesets:
+    rtl:
+        files: []
+        depend:
+            - uwcse:buckfast:tcp_data_move
+            - uwcse:buckfast:tcp_engine_proto
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

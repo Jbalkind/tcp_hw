@@ -1,0 +1,15 @@
+CAPI=2:
+name: uwcse:buckfast:udp_echo_app:0.1
+description: Buckfast UDP echo design
+
+filesets:
+    rtl:
+        files:
+            - udp_echo_app_top.sv
+        depend:
+            - uwcse:buckfast:includes
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

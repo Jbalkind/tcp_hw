@@ -1,0 +1,15 @@
+CAPI=2:
+name: uwcse:beehive:ip_testing:0.1
+description: Implementation of IP header parsing & checksum pipelined
+filesets:
+    rtl:
+        depend:
+            - uwcse:buckfast:frontend
+        file_type: systemVerilogSource
+targets:
+    default:
+        filesets: [rtl]
+    sim:
+        filesets: [rtl]
+        default_tool: modelsim
+        toplevel: [ip_stream_format_pipe_wrap]

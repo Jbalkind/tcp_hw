@@ -1,0 +1,54 @@
+######################################################
+#                   Includes                         #
+######################################################
+
++incdir+$PROJECT_ROOT/include/
+
+######################################################
+#               TCP HW Infrastructure                #
+######################################################
+#$PROJECT_ROOT/avacado_sim_top.sv
+$PROJECT_ROOT/dram_tile.sv
+#$PROJECT_ROOT/avalon_dram_controller.sv
+#$PROJECT_ROOT/fake_dram_controller.sv
+$PROJECT_ROOT/dram/avalon_dram_controller_wrap.sv
+$PROJECT_ROOT/dram/avalon_dram_controller_ctrl.sv
+$PROJECT_ROOT/dram/avalon_dram_controller_datap.sv
+
+######################################################
+#               NoC Infrastructure                   #
+######################################################
+-f $PROJECT_ROOT/noc_stuff/noc.flist
+
+######################################################
+#          Memory Testing Infrastructure             #
+######################################################
+$PROJECT_ROOT/testing/mem_testing/memory_test_sim_top.sv
+$PROJECT_ROOT/testing/mem_testing/memory_test_soc_top.sv
+$PROJECT_ROOT/testing/mem_testing/memory_test_tile.sv
+$PROJECT_ROOT/testing/mem_testing/memory_tester.sv
+$PROJECT_ROOT/testing/mem_testing/memory_test_trace_rom.sv
+
+######################################################
+#              Basejump Testing Modules              #
+######################################################
+$BASEJUMP_STL_ROOT/bsg_test/bsg_trace_replay.sv
+
+######################################################
+#               Basejump STL Modules                 #
+######################################################
+$BASEJUMP_STL_ROOT/bsg_misc/bsg_circular_ptr.sv
+
+#$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_2r1w_sync.sv
+#$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_2r1w_sync_synth.sv
+#$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1r1w_sync.sv
+#$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1r1w_sync_synth.sv
+#$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1r1w.sv
+#$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1r1w_synth.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1rw_sync.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1rw_sync_synth.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1rw_sync_mask_write_byte.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1rw_sync_mask_write_byte_synth.sv
+
+
+

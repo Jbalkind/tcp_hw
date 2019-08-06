@@ -1,0 +1,18 @@
+CAPI=2:
+name: uwcse:buckfast:fifo:0.1
+description: FIFO components from Buckfast
+
+filesets:
+    rtl:
+        files:
+            - axis_fifo.v
+            - fifo_1r1w.sv
+            - fifo_2w.v
+            - peek_fifo_1r1w.sv
+        depend:
+            - uwcse:buckfast:ram
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

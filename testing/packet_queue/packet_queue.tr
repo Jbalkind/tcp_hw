@@ -1,0 +1,195 @@
+# Format: cmd __ rd_req __ wr_req __ start_pkt __ end_pkt __ empty __ full __ data
+
+# TEST 1: Write start of packet and then check the queue is still empty
+# Send the start of packet
+# Trace 1
+0001__0__1__1__0__0__0__0000_0001
+
+# Receive for the empty signal
+# Trace 2
+0010__0__0__0__0__1__0__0000_0000
+
+# Receive for the empty signal
+# Trace 3
+0010__0__0__0__0__1__0__0000_000
+
+# TEST 2: Write the rest of the packet and make sure the queue has data available
+# Send the next frame of the packet
+# Trace 4
+0001__0__1__0__0__0__0__0000_0010
+
+# Send the last frame of the packet
+# Trace 5
+0001__0__1__0__1__0__0__0000_0011
+
+# Receive for the empty signal, the data will also be on the data line
+# Trace 6
+0010__0__0__0__0__0__0__0000_0001
+
+# TEST 3: Try to read back the packet from the queue
+# Check the result
+# Trace 7
+0010__0__0__0__0__0__0__0000_0001
+
+# Send the read request to clear it
+# Trace 8
+0001__1__0__0__0__0__0__0000_0000
+
+# Check for the second frame
+# Trace 9
+0010__0__0__0__0__0__0__0000_0010
+
+# Send the read request to clear it
+# Trace 10
+0001__1__0__0__0__0__0__0000_0000
+
+# Check for the last frame
+# Trace 11
+0010__0__0__0__0__0__0__0000_0011
+
+# Send the read request to clear it
+# Trace 12
+0001__1__0__0__0__0__0__0000_0000
+
+# TEST 4: Check if the queue is empty
+# Trace 13
+0010__0__0__0__0__1__0__0000_0000
+
+# TEST 5: Check that the queue will read full when appropriate
+# Send the write request
+# Trace 14
+0001__0__1__1__0__0__0__0000_0001
+
+# Send the write request
+# Trace 15
+0001__0__1__0__0__0__0__0000_0010
+
+# Send the write request
+# Trace 16
+0001__0__1__0__0__0__0__0000_0011
+
+# Send the write request
+# Trace 17
+0001__0__1__0__1__0__0__0000_0100
+
+# Send the write request
+# Trace 18
+0001__0__1__1__0__0__0__0000_0101
+
+# Send the write request
+# Trace 19
+0001__0__1__0__0__0__0__0000_0110
+
+# Send the write request
+# Trace 20
+0001__0__1__0__0__0__0__0000_0111
+
+# Send the write request
+# Trace 21
+0001__0__1__0__0__0__0__0000_1000
+
+# Check for full
+# Trace 22
+0010__0__0__0__0__0__1__0000_0001
+
+# TEST 6: Try writing the rest of the frame even though the underlying queue is full and read the
+# first data back to make sure it wasn't overwritten
+
+# Send the write request
+# Trace 23
+0001__0__1__0__0__0__0__0000_1001
+
+# Try to read the queue for the first data
+# Trace 24
+0010__0__0__0__0__0__0__0000_0001
+
+# Send the read request
+# Trace 25
+0001__1__0__0__0__0__0__0000_0000
+
+# TEST 7: Try writing the last frame, make sure we can't read it back after reading out the
+# other frame
+# Trace 26
+# Write the last frame of the packet
+0001__0__1__0__1__0__0__0000_1010
+
+# Read back data
+# Trace 27
+0010__0__0__0__0__0__0__0000_0010
+
+# Send the read request
+# Trace 28
+0001__1__0__0__0__0__0__0000_0000
+
+# Read back data
+# Trace 29
+0010__0__0__0__0__0__0__0000_0011
+
+# Send the read request
+# Trace 30
+0001__1__0__0__0__0__0__0000_0000
+
+# Read back data
+# Trace 31
+0010__0__0__0__0__0__0__0000_0100
+
+# Send the read request
+# Trace 32
+0001__1__0__0__0__0__0__0000_0000
+
+# Check that the queue reads as empty
+# Trace 33
+0010__0__0__0__0__1__0__0000_0000
+
+# TEST 8: Try writing a packet overlapped with another packet and make sure we get the whole packet,
+# but only the second packet
+
+# Send the first frame
+# Trace 34
+0001__0__1__1__0__0__0__0000_1011
+
+# Send the next frame
+# Trace 35
+0001__0__1__0__0__0__0__0000_1100
+
+# Send the start of the second packet
+# Trace 36
+0001__0__1__1__0__0__0__0000_1101
+
+# Send the next frame of the second packet
+# Trace 37
+0001__0__1__0__0__0__0__0000_1110
+
+# Send the last frame of the second packet
+# Trace 38
+0001__0__1__0__1__0__0__0000_1111
+
+# Check that we are reading the first frame of the second packet
+# Trace 39
+0010__0__0__0__0__0__0__0000_1101
+
+# Send the read request
+# Trace 40
+0001__1__0__0__0__0__0__0000_0000
+
+# Check that we are reading the second frame of the second packet
+# Trace 41
+0010__0__0__0__0__0__0__0000_1110
+
+# Send the read request
+# Trace 42
+0001__1__0__0__0__0__0__0000_0000
+
+# Check that we are reading the last frame of the second packet
+# Trace 43
+0010__0__0__0__0__0__0__0000_1111
+
+# Send the read request
+# Trace 44
+0001__1__0__0__0__0__0__0000_0000
+
+# Finish
+# Trace 45
+0100__0__0__0__0__0__0__0000_0000
+
+

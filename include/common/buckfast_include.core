@@ -1,0 +1,16 @@
+CAPI=2:
+name: uwcse:buckfast:includes:0.1
+description: Includes for buckfast
+
+filesets:
+    rtl:
+        files:
+            - noc_defs.vh: {is_include_file: true}
+            - soc_defs.vh: {is_include_file: true}
+        depend:
+            - uwcse:buckfast:bsg_include
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

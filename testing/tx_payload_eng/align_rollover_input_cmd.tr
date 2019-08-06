@@ -1,0 +1,8 @@
+# Send write right before wrap
+0001__0__000_1111_1111_1111_0000__0001_0000
+# Send write right after wrap
+0001__0__000_0000_0000_0000_0000__0001_0000
+# Send read for wrapped data
+0001__1__000_1111_1111_1111_0000__0010_0000
+# Set the trace to be done
+0011__0__000_0000_0000_0000_0000__0000_0000

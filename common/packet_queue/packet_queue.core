@@ -1,0 +1,14 @@
+CAPI=2:
+name: uwcse:buckfast:packet_queue:0.1
+description: Queue that allows you to only output full frames or drop partial frames
+
+filesets:
+    rtl:
+        files:
+            - packet_queue.sv
+            - packet_queue_controller.sv
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

@@ -1,0 +1,24 @@
+CAPI=2:
+name: uwcse:buckfast:ram:0.1
+description: Various memory primitives used in Buckfast
+
+filesets:
+    rtl:
+        files:
+            - bank_valid_mem.sv
+            - ram_1r1w_sync_backpressure.sv
+            - ram_1rw1w_byte_mask_sync.sv
+            - ram_1r1w_sync.sv
+            - ram_1rw1w_sync.sv
+            - ram_2r1w_sync_backpressure.sv
+            - ram_2rw_sync.sv
+            - ram_1rw_byte_mask_sync.sv
+            - ram_1rw_byte_mask_out_reg.sv
+            - ram_1w_byte_mask_out_reg_wrap.sv
+        depend:
+            - uwcse:buckfast:bsg_mem
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

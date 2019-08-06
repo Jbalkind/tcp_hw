@@ -1,0 +1,14 @@
+`ifndef TEST_OVERRIDE_DEFS_VH
+`define TEST_OVERRIDE_DEFS_VH
+
+`define     MAX_FLOW_CNT            8// should be power of two
+
+`define PAYLOAD_ENTRY_ADDR_W 32
+`define PAYLOAD_ENTRY_LEN_W 16
+
+`define RX_PAYLOAD_Q_SIZE_W 7
+`define RX_PAYLOAD_Q_SIZE   (2**`RX_PAYLOAD_Q_SIZE_W)
+
+`define PAYLOAD_BUF_MEM_ELS (`MAX_FLOW_CNT * `RX_PAYLOAD_Q_SIZE)
+`define PAYLOAD_BUF_MEM_ADDR_W (`BSG_SAFE_CLOG2(`PAYLOAD_BUF_MEM_ELS))
+`endif

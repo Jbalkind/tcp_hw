@@ -1,0 +1,20 @@
+CAPI=2:
+name: uwcse:beehive:tcp_inc:0.1
+description: Includes for buckfast's TCP
+
+filesets:
+    rtl:
+        files:
+            - protocol_defs.vh: {is_include_file: true}
+            - sim_config.vh: {is_include_file: true}
+            - tcp_pkg.sv
+            - tcp_misc_pkg.sv
+        depend:
+            - uwcse:buckfast:bsg_include
+            - uwcse:buckfast:includes
+            - uwcse:beehive:common_inc
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]

@@ -1,0 +1,48 @@
+######################################################
+#                   Includes                         #
+######################################################
+
++incdir+$PROJECT_ROOT/include/
++incdir+$PROJECT_ROOT/testing/tx_payload_eng/include/
+
+######################################################
+#                 Testing wrappers                   #
+######################################################
+$PROJECT_ROOT/testing/tx_payload_eng/tx_payload_eng_trace_test_harness.sv
+$PROJECT_ROOT/testing/tx_payload_eng/tx_payload_eng_trace_test_top.sv
+$PROJECT_ROOT/testing/tx_payload_eng/input_cmd_rom.sv
+$PROJECT_ROOT/testing/tx_payload_eng/input_data_rom.sv
+$PROJECT_ROOT/testing/tx_payload_eng/output_data_rom.sv
+$PROJECT_ROOT/testing/tx_payload_eng/tx_payload_engine_tile.sv
+$PROJECT_ROOT/testing/tx_payload_eng/tester_tile.sv
+$PROJECT_ROOT/testing/tx_payload_eng/tester_wrap.sv
+
+######################################################
+#               TCP HW Infrastructure                #
+######################################################
+$PROJECT_ROOT/frontend/tx_rd_mem_wrap.sv
+$PROJECT_ROOT/frontend/tx_rd_mem_datapath.sv
+$PROJECT_ROOT/frontend/tx_rd_mem_data_ctrl.sv
+
+$PROJECT_ROOT/dram_tile.sv
+$PROJECT_ROOT/avalon_dram_controller.sv
+$PROJECT_ROOT/common/noc_helpers/rd_mem_noc_module.sv
+$PROJECT_ROOT/common/noc_helpers/wr_mem_noc_module.sv
+
+######################################################
+#               NoC Infrastructure                   #
+######################################################
+-f $PROJECT_ROOT/noc_stuff/noc.flist
+
+######################################################
+#              Basejump Testing Modules              #
+######################################################
+$BASEJUMP_STL_ROOT/bsg_test/bsg_trace_replay.v
+
+######################################################
+#               Basejump STL Modules                 #
+######################################################
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1rw_sync_mask_write_byte.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1rw_sync_mask_write_byte_synth.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1rw_sync.sv
+$BASEJUMP_STL_ROOT/bsg_mem/bsg_mem_1rw_sync_synth.sv

@@ -1,0 +1,16 @@
+CAPI=2:
+name: uwcse:buckfast:mem_alloc:0.1
+description: Fast slab allocator for TCP engine
+
+filesets:
+    rtl:
+        files:
+            - slab_alloc_tracker.sv
+        depend:
+            - uwcse:buckfast:includes
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets: [rtl]
+
