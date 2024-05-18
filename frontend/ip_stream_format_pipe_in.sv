@@ -73,6 +73,7 @@ import tracker_pkg::*;
     logic   [`TOT_LEN_W-1:0]        ip_hdr_len;
     ip_pkt_hdr                      ip_hdr_reg;
     ip_pkt_hdr                      ip_hdr_next;
+    ip_pkt_hdr                      ip_hdr_cast;
     logic                           store_ip_hdr;
 
     logic   [KEEP_SHIFT_W:0]      keep_shift;

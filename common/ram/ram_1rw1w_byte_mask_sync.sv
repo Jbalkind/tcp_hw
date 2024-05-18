@@ -172,7 +172,7 @@ module ram_1rw1w_byte_mask_sync #(
         ,.reset_i   (reset_i)
         // data and valid for write
         ,.data_i        (bank0_w_data   )
-        ,.wriet_mask_i  (bank0_w_mask   )
+        ,.write_mask_i  (bank0_w_mask   )
         ,.w_i           (bank0_w        )
     
         // addr for read and write
@@ -191,7 +191,7 @@ module ram_1rw1w_byte_mask_sync #(
         ,.reset_i   (reset_i)
         // data and valid for write
         ,.data_i        (bank1_w_data   )
-        ,.wriet_mask_i  (bank1_w_mask   )
+        ,.write_mask_i  (bank1_w_mask   )
         ,.w_i           (bank1_w        )
     
         // addr for read and write

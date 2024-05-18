@@ -36,8 +36,6 @@ module peek_fifo_1r1w #(
     assign rd_data = fifo_mem[rd_ptr_reg];
     assign rd_data_next = fifo_mem[peek_ptr];
 
-    assign fifo_wr_val = wr_req;
-
     assign full = (wr_wrap_bit_reg != rd_wrap_bit_reg) && (wr_ptr_reg == rd_ptr_reg);
 
     always_comb begin

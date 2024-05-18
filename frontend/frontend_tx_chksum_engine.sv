@@ -166,6 +166,7 @@ module frontend_tx_chksum_engine #(
         ,.resp_tval                     (resp_tvalid                    )
         ,.resp_trdy                     (resp_tready                    )
         ,.resp_tlast                    (resp_tlast                     )
+        ,.resp_tuser                    ()
         
         ,.chksum_dst_tx_hdr_val         (chksum_dst_tx_hdr_val          )
         ,.dst_chksum_tx_hdr_rdy         (dst_chksum_tx_hdr_rdy          )
