@@ -38,6 +38,7 @@ filesets:
             - tcp_to_stream.sv
 
         depend:
+            - uwcse:beehive:tracker
             - uwcse:buckfast:includes
             - uwcse:buckfast:fifo
             - uwcse:beehive:circ_buf_helpers
