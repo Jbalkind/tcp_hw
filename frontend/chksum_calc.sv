@@ -236,10 +236,16 @@ data_fifo (
     .m_axis_tid(data_out_axis_tid),
     .m_axis_tdest(data_out_axis_tdest),
     .m_axis_tuser(data_out_axis_tuser),
+
+    // Pause
+    .pause_req(),
+    .pause_ack(),
     // Status
     .status_overflow(),
     .status_bad_frame(),
-    .status_good_frame()
+    .status_good_frame(),
+    .status_depth(),
+    .status_depth_commit()
 );
 
 // checksum FIFO
@@ -274,10 +280,16 @@ csum_fifo (
     .m_axis_tid(),
     .m_axis_tdest(),
     .m_axis_tuser(),
+    
+    // Pause
+    .pause_req(),
+    .pause_ack(),
     // Status
     .status_overflow(),
     .status_bad_frame(),
-    .status_good_frame()
+    .status_good_frame(),
+    .status_depth(),
+    .status_depth_commit()
 );
 
 // Mask input data
