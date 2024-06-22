@@ -8,6 +8,7 @@ filesets:
             - udp_echo_app_top.sv
         depend:
             - uwcse:buckfast:includes
+            - uwcse:beehive:tracker
         file_type: systemVerilogSource
 
 targets:

@@ -53,7 +53,7 @@ module ip_to_mac (
             // 198.0.0.11
             `IP_ADDR_W'hc6_00_00_0b: begin
                 mac_hit = 1'b1;
-                mac_result = `MAC_ADDR_W'hb8_59_9f_b7_c1_34;
+                mac_result = `MAC_ADDR_W'hb8_59_9f_b7_ba_bc;
             end
             `IP_ADDR_W'hc6_00_00_0d: begin
                 mac_hit = 1'b1; 

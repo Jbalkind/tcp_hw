@@ -1,7 +1,8 @@
 `include "soc_defs.vh"
 `include "packet_defs.vh"
+module eth_frame_format 
 import packet_struct_pkg::*;
-module eth_frame_format (
+(
      input clk
     ,input rst
 

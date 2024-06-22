@@ -1,29 +1,31 @@
 `include "packet_defs.vh"
 `include "soc_defs.vh"
+module udp_echo_app_top 
+import tracker_pkg::*;
 import packet_struct_pkg::*;
-module udp_echo_app_top (
+(
      input clk
     ,input rst
     
-    ,input  logic                               src_udp_echo_app_rx_hdr_val
-    ,input  logic   [`IP_ADDR_W-1:0]            src_udp_echo_app_rx_src_ip
-    ,input  logic   [`IP_ADDR_W-1:0]            src_udp_echo_app_rx_dst_ip
-    ,input  udp_pkt_hdr                         src_udp_echo_app_rx_udp_hdr
-    ,input          [`PKT_TIMESTAMP_W-1:0]      src_udp_echo_app_rx_timestamp
-    ,output logic                               udp_echo_app_src_rx_hdr_rdy
+    ,input  logic                           src_udp_echo_app_rx_hdr_val
+    ,input  logic   [`IP_ADDR_W-1:0]        src_udp_echo_app_rx_src_ip
+    ,input  logic   [`IP_ADDR_W-1:0]        src_udp_echo_app_rx_dst_ip
+    ,input  udp_pkt_hdr                     src_udp_echo_app_rx_udp_hdr
+    ,input  tracker_stats_struct            src_udp_echo_app_rx_timestamp
+    ,output logic                           udp_echo_app_src_rx_hdr_rdy
 
-    ,input  logic                               src_udp_echo_app_rx_data_val
-    ,input  logic   [`MAC_INTERFACE_W-1:0]      src_udp_echo_app_rx_data
-    ,input  logic                               src_udp_echo_app_rx_last
-    ,input  logic   [`MAC_PADBYTES_W-1:0]       src_udp_echo_app_rx_padbytes
-    ,output logic                               udp_echo_app_src_rx_data_rdy
+    ,input  logic                           src_udp_echo_app_rx_data_val
+    ,input  logic   [`MAC_INTERFACE_W-1:0]  src_udp_echo_app_rx_data
+    ,input  logic                           src_udp_echo_app_rx_last
+    ,input  logic   [`MAC_PADBYTES_W-1:0]   src_udp_echo_app_rx_padbytes
+    ,output logic                           udp_echo_app_src_rx_data_rdy
     
-    ,output logic                               udp_echo_app_dst_hdr_val
-    ,output logic   [`IP_ADDR_W-1:0]            udp_echo_app_dst_src_ip_addr
-    ,output logic   [`IP_ADDR_W-1:0]            udp_echo_app_dst_dst_ip_addr
-    ,output udp_pkt_hdr                         udp_echo_app_dst_udp_hdr
-    ,output logic   [`PKT_TIMESTAMP_W-1:0]      udp_echo_app_dst_timestamp
-    ,input  logic                               dst_udp_echo_app_hdr_rdy
+    ,output logic                           udp_echo_app_dst_hdr_val
+    ,output logic   [`IP_ADDR_W-1:0]        udp_echo_app_dst_src_ip_addr
+    ,output logic   [`IP_ADDR_W-1:0]        udp_echo_app_dst_dst_ip_addr
+    ,output udp_pkt_hdr                     udp_echo_app_dst_udp_hdr
+    ,output tracker_stats_struct            udp_echo_app_dst_timestamp
+    ,input  logic                           dst_udp_echo_app_hdr_rdy
     
     ,output logic                               udp_echo_app_dst_data_val
     ,output logic   [`MAC_INTERFACE_W-1:0]      udp_echo_app_dst_data
