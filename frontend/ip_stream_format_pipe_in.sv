@@ -1,4 +1,5 @@
-`include "packet_defs.vh"
+`include "noc_defs.vh"
+`include "soc_defs.vh"
 module ip_stream_format_pipe_in 
 import packet_struct_pkg::*;
 import ip_stream_format_pkg::*;

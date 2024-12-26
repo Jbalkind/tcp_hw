@@ -1,4 +1,5 @@
 `include "soc_defs.vh"
+`include "noc_defs.vh"
 `include "packet_defs.vh"
 module ip_hdr_assembler_pipe_in 
 import packet_struct_pkg::*;
